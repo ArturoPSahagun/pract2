@@ -13,6 +13,7 @@ private:
 public:
     void leerRegistro(ifstream&);
     int obtenerDireccionBase();
+    string toString();
 };
 
 void registro::leerRegistro(ifstream& file){
@@ -50,4 +51,17 @@ int registro::obtenerDireccionBase(){
     //de esta manera nos aseguramos que el numero generado este dentro los limites establecidos
     return s%101;
     //este entero corresponde a la direccion base del registro cargado en el buffer en este momento
+}
+
+string registro::toString(){
+    string s;
+    s += placa;
+    s += '|';
+    s += nombre;
+    s += '|';
+    s += domicilio;
+    s += '|';
+    s += provincia;
+
+    return s;
 }
